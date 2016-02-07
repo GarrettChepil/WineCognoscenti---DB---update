@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Wine Cognoscenti</string>
+    <string name="title_activity_main">Wine Cognoscenti</string>
+    <string name="title_activity_activity_best_wine">Best Wine Selection</string>
+    <string name="action_search">Search</string>
+    <string name="action_share">Share</string>
+    <string name="action_settings">Settings</string>
+    <string name="select_string">Select an item</string>
+
+    <string-array name="Subtext">
+        <item></item>
+        <item>beef, lamb, venison</item>
+        <item>salami, proscuitto, bresaola, bacon</item>
+        <item>roast, tenderloin, pork chop</item>
+        <item>chicken, duck, turkey</item>
+        <item>oyster, mussel, clam</item>
+        <item>tuna, cod, trout, bass</item>
+        <item>prawn, crab, langoustine</item>
+        <item>Brie, mascarpone, creme fraiche</item>
+        <item>bleu, Gorgonzola, Stilton, Rouguefort</item>
+        <item>cheddar, Pecorina, Manchego, Asiago, Parmesan</item>
+        <item>onion, shallot, garlic, scallion</item>
+        <item>green bean, kale, lettuce</item>
+        <item>turnip, butternut, pumpkin, delicata, carrot</item>
+        <item>tomato, eggplant, bell pepper</item>
+        <item>crimini, maitake, chanterelle</item>
+        <item>peanut, almond, pecan, sesame</item>
+        <item>lentil, navy, pinto, chickpea</item>
+        <item></item>
+        <item>ancho, aleppo, chipotle, chili</item>
+        <item>hot sauce, habanero, sichuan</item>
+        <item>thyme, oregano, basil, tarragon</item>
+        <item>cinnamon, clove, allspice, mace</item>
+        <item>anise, turmeric, saffron, fennel, ginger</item>
+        <item>flour, white rice, pasta, bread, tortillas</item>
+        <item>quinoa, farro, brown rice</item>
+        <item>sweet potato, yucca, taro</item>
+        <item></item>
+        <item>strawberry, orange, apple, peach</item>
+        <item>creme brulee, ice cream</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="Ingredients">
+        <item></item>
+        <item>Red Meat</item>
+        <item>Cured Meat</item>
+        <item>Pork</item>
+        <item>Poultry</item>
+        <item>Mollusk</item>
+        <item>Fish(Incl. Raw)</item>
+        <item>Lobster &amp; Shellfish</item>
+        <item>Soft Cheese &amp; Cream</item>
+        <item>Pungent Cheese</item>
+        <item>Hard Cheese</item>
+        <item>Alliums</item>
+        <item>Green Vegetables</item>
+        <item>Root Vegetable &amp; Squash</item>
+        <item>Nightshades</item>
+        <item>Funghi</item>
+        <item>Nuts &amp; Seeds</item>
+        <item>Beans &amp; Peas</item>
+        <item>Black Pepper</item>
+        <item>Red Pepper</item>
+        <item>Hot &amp; Spicy</item>
+        <item>Herbs</item>
+        <item>Baking Spices</item>
+        <item>Exotic &amp; Aromatic Spices</item>
+        <item>White Starches</item>
+        <item>Whole Weat Grains</item>
+        <item>Sweet Starchy Vegetables</item>
+        <item>Potato</item>
+        <item>Fruit &amp; Berries</item>
+        <item>Vanilla &amp; Caramel</item>
+        <item>Chocolate &amp; Coffee</item>
+    </string-array>
+    <string name="title_activity_best_wine">BestWineActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="txtcheesename">CHEESE</string>
+    <string name="txtMeatName">MEAT</string>
+    <string name="txtVegetableName">VEGETABLE</string>
+    <string name="txtherbSpiceName">HERB AND SPICES</string>
+    <string name="txtStarchName">STARCH</string>
+    <string name="txtSweetsName">SWEETS</string>
+    <string name="txtPrepName">PREPARATION</string>
+</resources>

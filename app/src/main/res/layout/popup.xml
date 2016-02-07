@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@android:color/background_light"
+    android:weightSum="1">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="1dp"
+        android:background="@drawable/background2">
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="187dp"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/linearLayout"
+            android:layout_below="@+id/dismiss"
+            android:focusableInTouchMode="true">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Search For Ingredient"
+                android:id="@+id/title"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edTxtSearch"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:hint="Enter your food here" />
+
+            <ListView
+                android:layout_width="170dp"
+                android:layout_height="114dp"
+                android:id="@+id/lstSearch"
+                android:smoothScrollbar="true"
+                android:scrollIndicators="top|bottom" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/dismiss"
+            android:layout_width="46dp"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/ic_menu_close_clear_cancel"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/linearLayout"
+            android:layout_toEndOf="@+id/linearLayout" />
+    </RelativeLayout>
+
+</LinearLayout>
