@@ -6,13 +6,13 @@ import android.app.Application;
  * Created by GeEEE on 2016-01-25.
  */
 public class BestWineSelection extends Application {
-    private FindBest best;
+    private BestPairing best;
 
-    public FindBest getBest() {
+    public BestPairing getBest() {
         return best;
     }
 
-    public void setBest(FindBest best) {
+    public void setBest(BestPairing best) {
         this.best = best;
     }
 }

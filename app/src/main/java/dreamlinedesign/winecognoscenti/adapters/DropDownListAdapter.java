@@ -31,6 +31,8 @@ public class DropDownListAdapter extends BaseAdapter {
     public  String getSelected() {
         return selected;
     }
+    private String origtxt;
+
 
     public void setSelected(String selected) {
 
@@ -47,6 +49,8 @@ public class DropDownListAdapter extends BaseAdapter {
         mSelectedItems = tv;
         this.checkSelected = checkSelected;
         this.dropDownCheckBox = dropDownCheckBox;
+        origtxt = tv.getText().toString();
+
     }
 
     @Override
@@ -117,7 +121,7 @@ public class DropDownListAdapter extends BaseAdapter {
         }
 
         if (selectedCount == 0) {
-            mSelectedItems.setText(R.string.select_string);
+            mSelectedItems.setText(dropDownCheckBox.origtxt);
         } else if (selectedCount == 1) {
             for (int i = 0; i < checkSelected.length; i++) {
                 if (checkSelected[i] == true) {

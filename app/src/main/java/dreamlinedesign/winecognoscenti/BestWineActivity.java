@@ -24,7 +24,7 @@ import dreamlinedesign.winecognoscenti.adapters.WineListAdapter;
 
 public class BestWineActivity extends AppCompatActivity {
 
-    FindBest best;
+    BestPairing best;
     Map<Integer, Integer> topSelection;
     Map <Integer, Integer> Second;
     TextView besttxt, txtBest2, txtBest3;

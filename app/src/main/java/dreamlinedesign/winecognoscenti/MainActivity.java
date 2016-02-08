@@ -1,10 +1,10 @@
 package dreamlinedesign.winecognoscenti;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
             "cinnamon, clove, allspice, mace", "anise, turmeric, saffron, fennel, ginger", "flour, white rice, pasta, " +
             "bread, tortillas", "quinoa, farro, brown rice", "sweet potato, yucca, taro", "",
             "strawberry, orange, apple, peach", "creme brulee, ice cream", ""};*/
+    private BestPairing best;
+
+    MainActivity mainActivity;
     private String[] subtext;
     TextView title, txtmeat, txtCheese, tvProduce, tvHerbSpice,tvStarch, tvSweet, tvPrep;;
     Button btnMeat, btnCheese, btnProduce, btnHerbSpice,btnStarch, btnSweet, btnPrep;;
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     ListView lstSearch;
     Set searchPos;
     String [] searcharray;
-    public static Boolean [] checkmeat, checkCheese, checkProduce, checkHerbSpice,checkStarch, checkSweet, checkPrep;;
+    public static Boolean [] checkmeat, checkCheese, checkProduce, checkHerbSpice,checkStarch, checkSweet, checkPrep;
     private PopupWindow pw;
     public DropDownCheckBox checkBoxMeat, checkBoxCheese, cbProduce, cbHerbSpice,cbStarch, cbSweet, cbPrep;
     public View layout1;
@@ -75,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BuildToolBar();
+
         layout1 = (View) findViewById(R.id.layoutmeat);
         View layout2 = (View) findViewById(R.id.layoutCheese);
         View layoutProduce  = (View) findViewById(R.id.layoutProduce);
@@ -82,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         View layoutstarch = (View) findViewById(R.id.layoutstarch);
         View layoutsweet = (View) findViewById(R.id.layoutsweet);
         View layoutprep = (View) findViewById(R.id.layoutprep);
-
+        mainActivity= this;
 
 
         txtmeat = (TextView) layout1.findViewById(R.id.SelectBox);
@@ -92,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         tvPrep = (TextView) layoutprep.findViewById(R.id.SelectBox);
         tvStarch = (TextView) layoutstarch.findViewById(R.id.SelectBox);
         tvSweet = (TextView) layoutsweet.findViewById(R.id.SelectBox);
+        cont = this;
 
         btnMeat = (Button) layout1.findViewById(R.id.create);
         btnCheese = (Button) layout2.findViewById(R.id.create);
@@ -100,17 +105,36 @@ public class MainActivity extends AppCompatActivity {
         btnStarch = (Button) layoutstarch.findViewById(R.id.create);
         btnSweet = (Button) layoutsweet.findViewById(R.id.create);
         btnPrep = (Button) layoutprep.findViewById(R.id.create);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                ArrayList<Boolean[]> selected = new ArrayList<Boolean[]>();
+                checkmeat = checkBoxMeat.getCheckSelected();
+                checkCheese = checkBoxCheese.getCheckSelected();
+                checkProduce = cbProduce.getCheckSelected();
+                checkHerbSpice = cbHerbSpice.getCheckSelected();
+                checkStarch = cbStarch.getCheckSelected();
+                checkSweet = cbSweet.getCheckSelected();
+                checkPrep = cbPrep.getCheckSelected();
+                selected.add(checkmeat);
+                selected.add(checkCheese);
+                selected.add(checkProduce);
+                selected.add(checkHerbSpice);
+                selected.add(checkStarch);
+                selected.add(checkSweet);
+                selected.add(checkPrep);
+
+                best = new BestPairing(selected);
+
+                ((BestWineSelection) mainActivity.getApplication()).setBest(best);
+                Intent intBestWine = new Intent();
+                intBestWine.setClass(getApplicationContext(), BestWineActivity.class);
+                startActivity(intBestWine);
+
             }
         });
 
-        cont = this;
         searchPos = new HashSet<>();
 
         Ingredients = getResources().getStringArray(R.array.Ingredients);
@@ -190,7 +214,13 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < checkPrep.length; i++)
             checkPrep[i] = false;
 
-
+        txtmeat.setText(R.string.txtMeatName);
+        txtCheese.setText(R.string.txtcheesename);
+        tvProduce.setText(R.string.txtVegetableName);
+        tvHerbSpice.setText(R.string.txtherbSpiceName);
+        tvStarch.setText(R.string.txtStarchName);
+        tvSweet.setText(R.string.txtSweetsName);
+        tvPrep.setText(R.string.txtPrepName);
 
         //title = (TextView) findViewById(R.id.txttitle);
 
@@ -229,13 +259,7 @@ public class MainActivity extends AppCompatActivity {
         btnPrep.setOnClickListener(cbPrep.returnbtnclik());
 
 
-        txtmeat.setText(R.string.txtMeatName);
-        txtCheese.setText(R.string.txtcheesename);
-        tvProduce.setText(R.string.txtVegetableName);
-        tvHerbSpice.setText(R.string.txtherbSpiceName);
-        tvStarch.setText(R.string.txtStarchName);
-        tvSweet.setText(R.string.txtSweetsName);
-        tvPrep.setText(R.string.txtPrepName);
+
     }
 
 

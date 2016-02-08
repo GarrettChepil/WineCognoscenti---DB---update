@@ -35,7 +35,7 @@ public class DropDownCheckBox {
     private LinearLayout popup;
     private ListView list;
     private Context context;
-
+    public String origtxt;
     public DropDownListAdapter getAdapter() {
         return adapter;
     }
@@ -96,6 +96,8 @@ public class DropDownCheckBox {
         this.pw = new PopupWindow(popup, ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
         this.items.addAll(items);
         this.tv = (TextView) Layout.findViewById(R.id.SelectBox);
+        origtxt = tv.getText().toString();
+
         this.createButton = (Button) Layout.findViewById(R.id.create);
         this.mainActivity = mainActivity;
         this.list = (ListView) popup.findViewById(R.id.dropDownList);
@@ -105,7 +107,7 @@ public class DropDownCheckBox {
         for (int i = 0; i < checkSelected.length; i++) {
             checkSelected[i] = false;
         }
-
+        origtxt = tv.getText().toString();
         this.expanded = false;
         adapter = new DropDownListAdapter(context, items,sub, tv, checkSelected, this);
         /*tv.setOnClickListener(new View.OnClickListener() {

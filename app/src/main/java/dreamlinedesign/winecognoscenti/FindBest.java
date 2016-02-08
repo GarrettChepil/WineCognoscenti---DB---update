@@ -8,6 +8,9 @@ import java.util.Map;
  * Created by GeEEE on 2016-02-01.
  */
 public class FindBest  {
+
+    public static Boolean [] checkmeat, checkCheese, checkProduce, checkHerbSpice,checkStarch, checkSweet, checkPrep;
+
     private int ingt1;
     private int ingt2;
     private int ingt3;

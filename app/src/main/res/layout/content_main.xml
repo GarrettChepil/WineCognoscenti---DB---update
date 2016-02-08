@@ -35,8 +35,6 @@
         android:text="When you start analyzing the structure of wine, each type of wine features different characteristics such as acidity, tannin, alcohol level and sweetness. If you start thinking about wine traits as flavor ingredients, it becomes easier to pair them with a meal."
         android:id="@+id/textView3"
         android:layout_below="@+id/txttitle"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:textAlignment="center"
         android:textSize="13sp" />
 
